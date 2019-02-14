@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+   
+    <head>
+        <title>To do Board</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="todo.js"></script>
+    </head>
+    <body onload="initialize()">
+        <div>
+            <table id = 'todo-table', border="1"></table>
+        </div>
+        <div id='input-data-table'>
+            <table>
+                <tr>
+                    <td>Id</td>
+                    <td>
+                        <input id='todo-id' type="text" name="id">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <input id='name-id' type="text" name="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td>
+                        <input id='description-id' type="text" name="description">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td>
+                        <input id='date-id' type="date" name="date">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="add-div-id">
+            <button onclick="showToDoForm()">Add</button>
+        </div>
+        <div id="save-div-id">
+            <button onclick="saveTask()">Save</button>
+        </div>
+    </body>
+</html>
