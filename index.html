@@ -1,23 +1,17 @@
 <!DOCTYPE html>
 <html>
-   
     <head>
         <title>To do Board</title>
+        <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="todo.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body onload="initialize()">
-        <div>
-            <table id = 'todo-table', border="1"></table>
+        <div id = 'todo-display-id'>
         </div>
         <div id='input-data-table'>
             <table>
-                <tr>
-                    <td>Id</td>
-                    <td>
-                        <input id='todo-id' type="text" name="id">
-                    </td>
-                </tr>
                 <tr>
                     <td>Name</td>
                     <td>
@@ -39,10 +33,10 @@
             </table>
         </div>
         <div id="add-div-id">
-            <button onclick="showToDoForm()">Add</button>
+            <button class="add" onclick="showToDoForm()">+</button>
         </div>
         <div id="save-div-id">
-            <button onclick="saveTask()">Save</button>
+            <button class="save" onclick="saveTask()">Save</button>
         </div>
     </body>
 </html>
