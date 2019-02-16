@@ -1,8 +1,17 @@
 table 
 {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 3rem;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 100%
+
     border: none;
-    width: auto;
-    background-color: yellow;
+    width: 100%;
+
+    background-image: url("notebg.png");
+
 }
 
 th
