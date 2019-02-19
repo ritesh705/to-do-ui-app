@@ -1,0 +1,68 @@
+table 
+{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 100%
+    border: none;
+    width: 100%;
+    margin-left: 5%;
+    background-image: url("../images/notebg.png");
+}
+
+th
+{
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family:"Comic Sans MS", cursive, sans-serif;
+    font-style: italic;
+    font-size:120%;
+}
+
+td
+{
+  padding: 8px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  text-align: center;
+  font-family: "Courier Header", cursive, sans-serif;
+}
+
+.del
+{
+    border-radius: 50%;
+    background-color: #f44336;
+}
+
+.updateButton
+{
+    background-image: url('../images/update-icon.png');
+    background-size: 20px, 20px;
+    height: 20px;
+    width: 20px;
+}
+
+.add
+{
+    border-radius: 50%;
+    background-color: #4CAF50;
+    margin-left: 5%;
+}
+
+.save
+{
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+    margin-left: 12%;
+}

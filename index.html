@@ -4,8 +4,8 @@
         <title>To do Board</title>
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="todo.js"></script>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="js/todo.js"></script>
+        <link rel="stylesheet" type="text/css" href="style/style.css">
     </head>
     <body onload="initialize()">
         <div id = 'todo-display-id'>
@@ -13,7 +13,7 @@
         <div id='input-data-table'>
             <table>
                 <tr>
-                    <td>Name</td>
+                    <td>To Do</td>
                     <td>
                         <input id='name-id' type="text" name="name">
                     </td>
@@ -37,6 +37,9 @@
         </div>
         <div id="save-div-id">
             <button class="save" onclick="saveTask()">Save</button>
+        </div>
+        <div id="update-div-id">
+            <button class="save" onclick="updateTask()">Update</button>
         </div>
     </body>
 </html>
