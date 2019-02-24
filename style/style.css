@@ -1,15 +1,7 @@
 table 
 {
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 1%;
-    position: relative;
-    background-repeat: no-repeat;
-    height: 100%
-    border: none;
-    width: 100%;
     margin-left: 5%;
-    background-image: url("../images/notebg.png");
+    background-color: #b5bc2f;
 }
 
 th
@@ -44,6 +36,7 @@ td
     background-size: 20px, 20px;
     height: 20px;
     width: 20px;
+    margin-right: 70%;
 }
 
 .add

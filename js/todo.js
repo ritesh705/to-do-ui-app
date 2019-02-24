@@ -74,6 +74,11 @@ function activateUpdate()
 
 function updateTask()
 {
+    var isValidate = validateInput();
+    if(!isValidate)
+    {
+        return false;
+    }
     $("#add-div-id").show();
     $('#update-div-id').hide();
     $("#input-data-table").hide();
