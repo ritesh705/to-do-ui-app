@@ -120,10 +120,28 @@ function displayTasks()
 {
     this.clear();
     tasks = JSON.parse(localStorage.getItem('todotasks'));
+    var div = document.getElementById('todo-display-id');
+    var mainTable = document.createElement('table');
+    var col01 = document.createElement('col');
+    var col02 = document.createElement('col');
+    col01.width = "250";
+    col02.width = "250";
+    mainTable.appendChild(col01);
+    mainTable.appendChild(col02);
+    var row1 = document.createElement('tr');
+
     tasks.forEach(function(task)
         {
-            this.generateTable(task);
+            var column1 = document.createElement('td');
+            var div1 = document.createElement('div');
+            var table = this.generateTable(task);
+            table.className = 'task-table';
+            div1.appendChild(table);
+            column1.appendChild(div1);
+            row1.appendChild(column1);
         })
+    mainTable.appendChild(row1);
+    div.appendChild(mainTable);
    /* $.each(tasks, function(i, task)
         {
             $("#todo-display-id").append(
@@ -144,13 +162,13 @@ function getUniqueId()
 
 function generateTable(task)
 {
-    var div = document.getElementById('todo-display-id');
+   
     var table = document.createElement('table');
     table.align = 'center';
     var tableBody = document.createElement('tbody');
 
     var row = document.createElement('tr');
-    
+
     var updateColumn = document.createElement('th');
     var updateButton = document.createElement('button');
     updateButton.className = 'updateButton';
@@ -197,8 +215,7 @@ function generateTable(task)
     tableBody.appendChild(row03);
     
     table.appendChild(tableBody);
-    div.appendChild(table);
 
-    var br = document.createElement('br');
-    div.appendChild(br);
+    return table;
+    
 }
