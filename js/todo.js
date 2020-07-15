@@ -1,5 +1,5 @@
-var tasks = [];
-var updateId = '';
+let tasks = [];
+let updateId = '';
 
 function initialize()
 {
@@ -36,11 +36,17 @@ function saveTask()
         $('#update-div-id').hide();
         $("#input-data-table").hide();
         this.clear();
-        var id = this.getUniqueId();
-        var task = {'id' : id,
+        let id = this.getUniqueId();
+        let task = {
+            'id' : id,
             'name' : $("#name-id").val(),
             'description' : $("#description-id").val(),
-            'date' : $("#date-id").val()};
+            'date' : $("#date-id").val()
+        };
+        if(!tasks)
+        {
+            let tasks = [];
+        }
         tasks.push(task);
         localStorage.clear();
         localStorage.setItem('todotasks', JSON.stringify(tasks));
@@ -55,7 +61,7 @@ function deleteTask(id)
         {
             if(task.id == id)
             {
-                var index = tasks.indexOf(task);
+                let index = tasks.indexOf(task);
                 tasks.splice(index, 1);
                 localStorage.clear();
                 localStorage.setItem('todotasks', JSON.stringify(tasks));
@@ -74,7 +80,7 @@ function activateUpdate()
 
 function updateTask()
 {
-    var isValidate = validateInput();
+    let isValidate = validateInput();
     if(!isValidate)
     {
         return false;
@@ -83,7 +89,7 @@ function updateTask()
     $('#update-div-id').hide();
     $("#input-data-table").hide();
     this.deleteTask(updateId);
-    var task = {'id' : updateId,
+    let task = {'id' : updateId,
                 'name' : $("#name-id").val(),
                 'description' : $("#description-id").val(),
                 'date' : $("#date-id").val()
@@ -97,7 +103,7 @@ function updateTask()
 
 function validateInput()
 {
-    var result = true;
+    let result = true;
     if(!$("#name-id").val())
     {
         alert("Name Missing!!!");
@@ -120,21 +126,21 @@ function displayTasks()
 {
     this.clear();
     tasks = JSON.parse(localStorage.getItem('todotasks'));
-    var div = document.getElementById('todo-display-id');
-    var mainTable = document.createElement('table');
-    var col01 = document.createElement('col');
-    var col02 = document.createElement('col');
+    let div = document.getElementById('todo-display-id');
+    let mainTable = document.createElement('table');
+    let col01 = document.createElement('col');
+    let col02 = document.createElement('col');
     col01.width = "250";
     col02.width = "250";
     mainTable.appendChild(col01);
     mainTable.appendChild(col02);
-    var row1 = document.createElement('tr');
+    let row1 = document.createElement('tr');
 
     tasks.forEach(function(task)
         {
-            var column1 = document.createElement('td');
-            var div1 = document.createElement('div');
-            var table = this.generateTable(task);
+            let column1 = document.createElement('td');
+            let div1 = document.createElement('div');
+            let table = this.generateTable(task);
             table.className = 'task-table';
             div1.appendChild(table);
             column1.appendChild(div1);
@@ -156,21 +162,21 @@ function displayTasks()
 
 function getUniqueId()
 {
-    var random = Math.floor(Math.random()*1000);
+    let random = Math.floor(Math.random()*1000);
     return random;
 }
 
 function generateTable(task)
 {
    
-    var table = document.createElement('table');
+    let table = document.createElement('table');
     table.align = 'center';
-    var tableBody = document.createElement('tbody');
+    let tableBody = document.createElement('tbody');
 
-    var row = document.createElement('tr');
+    let row = document.createElement('tr');
 
-    var updateColumn = document.createElement('th');
-    var updateButton = document.createElement('button');
+    let updateColumn = document.createElement('th');
+    let updateButton = document.createElement('button');
     updateButton.className = 'updateButton';
     updateButton.onclick = function()
     {
@@ -180,8 +186,8 @@ function generateTable(task)
     updateColumn.appendChild(updateButton);
     row.appendChild(updateColumn);
 
-    var column = document.createElement('th');
-    var button = document.createElement('button');
+    let column = document.createElement('th');
+    let button = document.createElement('button');
     button.innerHTML = 'X';
     button.className = 'del';
     button.onclick = function()
@@ -193,23 +199,23 @@ function generateTable(task)
     tableBody.appendChild(row);
 
 
-    var row01 = document.createElement('tr');
-    var column01 = document.createElement('th');
-    var text01 = document.createTextNode("Task Id # "+task.id);
+    let row01 = document.createElement('tr');
+    let column01 = document.createElement('th');
+    let text01 = document.createTextNode("Task Id # "+task.id);
     column01.appendChild(text01);
     row01.appendChild(column01);
     tableBody.appendChild(row01);
 
-    var row02 = document.createElement('tr');
-    var column11 = document.createElement('th');
-    var text11 = document.createTextNode(task.name);
+    let row02 = document.createElement('tr');
+    let column11 = document.createElement('th');
+    let text11 = document.createTextNode(task.name);
     column11.appendChild(text11);
     row02.appendChild(column11);
     tableBody.appendChild(row02);
 
-    var row03 = document.createElement('tr');
-    var column21 = document.createElement('td');
-    var text21 = document.createTextNode(task.description);
+    let row03 = document.createElement('tr');
+    let column21 = document.createElement('td');
+    let text21 = document.createTextNode(task.description);
     column21.appendChild(text21);
     row03.appendChild(column21);
     tableBody.appendChild(row03);
