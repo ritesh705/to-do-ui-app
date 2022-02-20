@@ -45,9 +45,9 @@ function saveTask()
         };
         if(!tasks)
         {
-            let tasks = [];
+            var tasks = [];
         }
-        tasks.push(task);
+		tasks.push(task);
         localStorage.clear();
         localStorage.setItem('todotasks', JSON.stringify(tasks));
     }
@@ -135,8 +135,9 @@ function displayTasks()
     mainTable.appendChild(col01);
     mainTable.appendChild(col02);
     let row1 = document.createElement('tr');
-
-    tasks.forEach(function(task)
+	
+	if(tasks){
+		tasks.forEach(function(task)
         {
             let column1 = document.createElement('td');
             let div1 = document.createElement('div');
@@ -146,6 +147,8 @@ function displayTasks()
             column1.appendChild(div1);
             row1.appendChild(column1);
         })
+	}
+	
     mainTable.appendChild(row1);
     div.appendChild(mainTable);
    /* $.each(tasks, function(i, task)
